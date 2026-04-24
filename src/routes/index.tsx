@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Terminal } from "lucide-react";
-import { P } from "node_modules/@clerk/clerk-react/dist/useAuth-BfjxAfMb.d.mts";
 import SkillCard from "#/components/SkillCard";
 import { dummySkillRecords } from "#/lib/dummySkillRecords";
 

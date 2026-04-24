@@ -8,15 +8,16 @@ import tailwindcss from '@tailwindcss/vite'
 
 const config = defineConfig({
   resolve: { tsconfigPaths: true },
+  server: {
+    watch: {
+      usePolling: true,
+    },
+  },
   plugins: [
     devtools(),
     tailwindcss(),
     tanstackStart(),
-    viteReact({
-      babel: {
-        plugins: ['babel-plugin-react-compiler'],
-      },
-    }),
+    viteReact(),
   ],
 })
 

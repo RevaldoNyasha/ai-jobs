@@ -1,91 +1,85 @@
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import type { QueryClient } from "@tanstack/react-query";
 import {
-  HeadContent,
-  Scripts,
-  createRootRouteWithContext,
-} from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
-
-import ClerkProvider from '../integrations/clerk/provider'
-
-import TanStackQueryDevtools from '../integrations/tanstack-query/devtools'
-
-import appCss from '../styles.css?url'
-
-import type { QueryClient } from '@tanstack/react-query'
-import Navbar from './../components/Navbar';
-import Crosshair from './../components/Crosshair';
+	createRootRouteWithContext,
+	HeadContent,
+	Scripts,
+} from "@tanstack/react-router";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
+import Crosshair from "./../components/Crosshair";
+import Navbar from "./../components/Navbar";
+import ClerkProvider from "../integrations/clerk/provider";
+import TanStackQueryDevtools from "../integrations/tanstack-query/devtools";
+import appCss from "../styles.css?url";
 
 interface MyRouterContext {
-  queryClient: QueryClient
+	queryClient: QueryClient;
 }
 
 export const Route = createRootRouteWithContext<MyRouterContext>()({
-  head: () => ({
-    meta: [
-      {
-        charSet: 'utf-8',
-      },
-      {
-        name: 'viewport',
-        content: 'width=device-width, initial-scale=1',
-      },
-      {
-        title: 'Skilled Jobs',
-      },
-      {
-        name: 'description',
-        content: 'Find skilled jobs easyly',
-      }
-    ],
-    links: [
-      {
-        rel: 'stylesheet',
-        href: appCss,
-      },
-    ],
-  }),
-  shellComponent: RootDocument,
-})
+	head: () => ({
+		meta: [
+			{
+				charSet: "utf-8",
+			},
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1",
+			},
+			{
+				title: "Skilled Jobs",
+			},
+			{
+				name: "description",
+				content: "Find skilled jobs easyly",
+			},
+		],
+		links: [
+			{
+				rel: "stylesheet",
+				href: appCss,
+			},
+		],
+	}),
+	shellComponent: RootDocument,
+});
 
-function RootDocument({ children }: { children:      React.ReactNode }) {
-  return (
-    <html lang="en">
-      <head>
-        <HeadContent />
-      </head>
-      <body className='font-sans antialiased wrap-anywhere'>
-        <ClerkProvider>
-          <div id="root-layout">
-            <header>
-              <div className='frame'>
-                    <Navbar/>
-                <Crosshair/>
-                <Crosshair/>
-              </div>
-            </header>
-            <main>
-              <div className='frame'>I have installed a BIOME JS for indenting my codebase. It's not working. Can you check what's happening? 
-                {children}
-              </div>
-            </main>
-          </div>
-          
-          <TanStackDevtools
-            config={{
-              position: 'bottom-right',
-            }}
-            plugins={[
-              {
-                name: 'Tanstack Router',
-                render: <TanStackRouterDevtoolsPanel />,
-              },
-              TanStackQueryDevtools,
-            ]}
-          />
-        </ClerkProvider>
-        <Scripts />
-      </body>
-    </html>
-  )
+function RootDocument({ children }: { children: React.ReactNode }) {
+	return (
+		<html lang="en">
+			<head>
+				<HeadContent />
+			</head>
+			<body className="font-sans antialiased wrap-anywhere">
+				<ClerkProvider>
+					<div id="root-layout">
+						<header>
+							<div className="frame">
+								<Navbar />
+								<Crosshair />
+								<Crosshair />
+							</div>
+						</header>
+						<main>
+							<div className="frame">{children}</div>
+						</main>
+					</div>
+
+					<TanStackDevtools
+						config={{
+							position: "bottom-right",
+						}}
+						plugins={[
+							{
+								name: "Tanstack Router",
+								render: <TanStackRouterDevtoolsPanel />,
+							},
+							TanStackQueryDevtools,
+						]}
+					/>
+				</ClerkProvider>
+				<Scripts />
+			</body>
+		</html>
+	);
 }

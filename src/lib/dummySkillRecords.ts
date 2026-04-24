@@ -8,7 +8,7 @@ export const dummySkillRecords: SkillRecord[] = [
 		tags: ["react", "javascript", "frontend"],
 		installCommand: "npm install react",
 		createdAt: "2026-04-23T10:00:00Z",
-		authorCleckId: "user_001",
+		authorClerkId: "user_001",
 		authorEmail: "user1@example.com",
 	},
 	{
@@ -20,7 +20,7 @@ export const dummySkillRecords: SkillRecord[] = [
 		tags: ["nodejs", "javascript", "backend"],
 		installCommand: "npm install node",
 		createdAt: "2026-04-23T10:05:00Z",
-		authorCleckId: "user_002",
+		authorClerkId: "user_002",
 		authorEmail: "user2@example.com",
 	},
 	{
@@ -32,7 +32,7 @@ export const dummySkillRecords: SkillRecord[] = [
 		tags: ["typescript", "javascript", "types"],
 		installCommand: "npm install typescript",
 		createdAt: "2026-04-23T10:10:00Z",
-		authorCleckId: "user_003",
+		authorClerkId: "user_003",
 		authorEmail: "user3@example.com",
 	},
 	{
@@ -56,7 +56,7 @@ export const dummySkillRecords: SkillRecord[] = [
 		tags: ["express", "api", "nodejs"],
 		installCommand: "npm install express",
 		createdAt: "2026-04-23T10:20:00Z",
-		authorCleckId: "user_005",
+		authorClerkId: "user_005",
 		authorEmail: "user5@example.com",
 	},
 ];

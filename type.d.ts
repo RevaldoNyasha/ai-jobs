@@ -4,9 +4,9 @@ interface SkillRecord {
     slug: string;
     description: string;
     category: string;
-    tags: string[];
+    tags: string[]; 
     installCommand: string;
     createdAt: string | null;
-    authorCleckId: string |  null;
+    authorClerkId: string |  null;
     authorEmail: string | null;
 }

@@ -12,7 +12,7 @@ import { useState } from "react";
 
 function SkillCard({
 	authorEmail,
-	authorCleckId,
+	authorClerkId,
 	createdAt,
 	description,
 	category,
@@ -60,7 +60,11 @@ function SkillCard({
 						/>
 						<div className="author-copy">
 							<p>Root</p>
-							<p>{new Date(createdAt as string).toLocaleDateString()}</p>
+							<p>
+								{createdAt
+									? new Date(createdAt as string).toLocaleDateString()
+									: "unknown"}
+							</p>
 						</div>
 					</div>
 					<p className="category">{category}</p>

@@ -44,7 +44,7 @@ export const dummySkillRecords: SkillRecord[] = [
 		tags: ["css", "grid", "layout"],
 		installCommand: "npm install css-grid",
 		createdAt: "2026-04-23T10:15:00Z",
-		authorCleckId: "user_004",
+		authorClerkId: "user_004",
 		authorEmail: "user4@example.com",
 	},
 	{

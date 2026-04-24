@@ -14,12 +14,14 @@ const Navbar = () => (
 		</div>
 
 		<div className="actions">
-      <Show when="signed-in">
-        <UserButton/>
-      </Show>
+      
+			<Show when="signed-in">
+				<UserButton />
+			</Show>
 
 			<Show when="signed-out">
-				<Link to="/auth/sign-in/$" className="btn-primary">
+				<Link to="/auth/sign-in" className="btn-primary">
+					{" "}
 					<LogIn size={16} />
 					Sign in
 				</Link>
